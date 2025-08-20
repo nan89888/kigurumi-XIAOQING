@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="auto">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>我的娃娃空间 · 示例主页</title>
+  <meta name="description" content="一个简洁的Kigurumi风格博客主页模板，含明暗色切换、导航栏与文章卡片栅格。" />
+  <style>
+    :root{
+      --bg:#ffffff;--fg:#1f2937;--muted:#6b7280;--card:#f8fafc;--border:#e5e7eb;--link:#2563eb;
+    }
+    html[data-theme="dark"]:root{--bg:#0b1020;--fg:#e5e7eb;--muted:#9ca3af;--card:#121a2d;--border:#1f2a44;--link:#60a5fa}
+    html[data-theme="auto"]:root{@media (prefers-color-scheme:dark){--bg:#0b1020;--fg:#e5e7eb;--muted:#9ca3af;--card:#121a2d;--border:#1f2a44;--link:#60a5fa}}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Noto Sans',"PingFang SC","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif}
+    a{color:var(--link);text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:1100px;margin:0 auto;padding:0 16px}
+    header{position:sticky;top:0;z-index:40;background:var(--bg);border-bottom:1px solid var(--border)}
+    .nav{display:flex;align-items:center;gap:16px;padding:10px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--link)}
+    .spacer{flex:1}
+    .menu{display:flex;gap:14px;flex-wrap:wrap}
+    .theme{display:flex;gap:6px;align-items:center}
+    .theme button{padding:6px 10px;border:1px solid var(--border);background:transparent;color:var(--fg);border-radius:8px;cursor:pointer}
+    .hero{padding:42px 0}
+    .hero h1{margin:0 0 8px;font-size:36px}
+    .hero p{margin:0;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+    .card{grid-column:span 12;background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+    .card-cover{aspect-ratio:16/9;background:#cbd5e1}
+    .card-body{padding:14px}
+    .card-title{margin:0 0 6px;font-size:18px;font-weight:700}
+    .card-meta{color:var(--muted);font-size:14px}
+    footer{margin-top:40px;border-top:1px solid var(--border);padding:20px 0;color:var(--muted)}
+    @media (min-width:640px){.card{grid-column:span 6}}
+    @media (min-width:980px){.card{grid-column:span 4}}
+  </style>
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="dot"></span><span>我的娃娃空间</span></div>
+      <nav class="menu">
+        <a href="#">首页</a>
+        <a href="#">摄影返图</a>
+        <a href="#">音乐分享</a>
+        <a href="#">AI</a>
+        <a href="#">关于</a>
+      </nav>
+      <div class="spacer"></div>
+      <div class="theme" aria-label="主题颜色切换">
+        <button data-mode="light">Light</button>
+        <button data-mode="dark">Dark</button>
+        <button data-mode="auto">Auto</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 顶部横幅/欢迎语 -->
+    <section class="hero">
+      <h1>Hello! 欢迎来到我的娃娃空间！</h1>
+      <p>这里记录Kigurumi的照片、聚会与故事。该页面是一个可部署的示例模板。</p>
+    </section>
+
+    <!-- 文章卡片栅格 -->
+    <section class="grid">
+      <!-- 单张卡片：复制这个块添加更多文章 -->
+      <article class="card">
+        <div class="card-cover"><img src="https://picsum.photos/800/450?random=1" alt="封面"/></div>
+        <div class="card-body">
+          <h3 class="card-title"><a href="#">萤火虫35th</a></h3>
+          <div class="card-meta">未分类 · 2025年5月8日 · admin · 378 阅读</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-cover"><img src="https://picsum.photos/800/450?random=2" alt="封面"/></div>
+        <div class="card-body">
+          <h3 class="card-title"><a href="#">密码保护：摄影返图</a></h3>
+          <div class="card-meta">未分类 · 2025年4月21日 · admin · 125 阅读</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-cover"><img src="https://picsum.photos/800/450?random=3" alt="封面"/></div>
+        <div class="card-body">
+          <h3 class="card-title"><a href="#">KF3聚会</a></h3>
+          <div class="card-meta">未分类 · 2025年6月10日 · admin · 116 阅读</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-cover"><img src="https://picsum.photos/800/450?random=4" alt="封面"/></div>
+        <div class="card-body">
+          <h3 class="card-title"><a href="#">诺艾尔</a></h3>
+          <div class="card-meta">未分类 · 2025年4月21日 · admin · 118 阅读</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-cover"><img src="https://picsum.photos/800/450?random=5" alt="封面"/></div>
+        <div class="card-body">
+          <h3 class="card-title"><a href="#">萤火虫34th</a></h3>
+          <div class="card-meta">未分类 · 2025年4月21日 · admin · 94 阅读</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-cover"><img src="https://picsum.photos/800/450?random=6" alt="封面"/></div>
+        <div class="card-body">
+          <h3 class="card-title"><a href="#">初物语角落</a></h3>
+          <div class="card-meta">未分类 · 2025年4月21日 · admin · 74 阅读</div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 分页占位 -->
+    <nav class="container" aria-label="分页" style="margin-top:20px">
+      <a href="#">« 上一页</a> · <a href="#">下一页 »</a>
+    </nav>
+  </main>
+
+  <footer>
+    <div class="container">
+      Copyright © 2025 我的娃娃空间 · 本站使用自定义模板 · Theme by 你自己
+    </div>
+  </footer>
+
+  <script>
+    // 主题切换：light/dark/auto，记录在localStorage
+    (function(){
+      const root=document.documentElement;
+      const saved=localStorage.getItem('theme-mode')||'auto';
+      root.setAttribute('data-theme', saved);
+      document.querySelectorAll('.theme [data-mode]').forEach(btn=>{
+        btn.addEventListener('click',()=>{
+          const mode=btn.getAttribute('data-mode');
+          root.setAttribute('data-theme', mode);
+          localStorage.setItem('theme-mode', mode);
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
